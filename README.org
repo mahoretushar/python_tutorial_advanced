@@ -1,0 +1,103 @@
+#+TITLE: Python Tutorial Info
+#+AUTHOR: Prof. T. R. Mahore
+
+* Folder Information
+This repo contains all the codes for the python tutorial, starting from basics to advanced level. One can learn everything from programs in this folder. Along with that there are several exercise files, which will be helpful in trying out various concepts.
+
+* Introduction to the Course
+This course helps you to build a basic as well as advanced level understanding of Python Programming. Python is one of the most popular programming languages among programmers, the reason behind that is *Python* is easy to understand, and once you learn the basics you can pretty much do all kinds of stuff with python. i.e. you can build *Desktop Application*, *Web Application*, *Mobile Application*, Python can be used for building *CLI Applications* and much more.
+
+Basically what you need to do is learn the basic constructs of python with basic understanding of how actually python works and you are good to go. Lot's of Python Courses are available on *Online Learning Paltforms*. All of them are good, but very few of them will provide the knowledge of how to handle python. This course is not only about the Python Programming Language, it will helpp you understanding how to manage python, how to properly document the python code, how to organise your projrct, and much more.
+
+* Editor's
+Let's Start with the most important topics while learning any of the programming language, and that is *Editor*. Lot's of Editors are out their, which can be used for basic learning as well as advanced level projects. One more thing to mention here is *IDE's*, they are different from editors. IDE's come with pre installed plugins and are specifically designed for that particular language, for python below are the most popular IDE'sout their:
+1. PyCharm (Free/Paid)
+2. Spyder
+3. IDLE (Pre Installed with Python)
+4. Thonny etc.
+
+On the other hand there are lot's of Editor's, know as text editor's also, which can be configured as per the programming needs, some of them are listed below:
+1. VSCode
+2. SublimeText
+3. VIM
+4. Emacs etc.
+
+Which text editor to use is totally up to you, editor or IDE any of the above can be a great choice. Besides that my Personal Choice is PyCharm as an IDE and I use Emacs and VIM as editors for basic coding.
+
+** VSCode
+For this course we are going to take a look at VSCode, because its one of the most popular Code Editors out their. So for Installing VSCode visit the given link: [[https://code.visualstudio.com/]]. Follow the instructions, it's easy to install. Or you can use any Package Manager to Install the VSCode, such as *Brew*, or *apt-get*, use whatever you are confortable with.
+
+Now after installing VSCode it's time to make it working for Python. In VSCode we can install Plugins via Plugins manager on Left Hand Side Panel. Following are some Plugins which will be helpful in setting up VSCode for Python:
+1. Python /(basic pluigin for python)/
+2. Pylance /(for linting and highlighting)/
+3. Code Runner /(for running the program)/
+4. Bracket Pair Colorizer
+5. Prettier /(code formatting)/
+6. Python Docstring Generator /(for better documentation of the code)/
+
+All these Plugins are enough for getting started. You can configure you editor as you like.
+
+* Python Installation and Version Management
+** Python is OS
+*Before we start coding in *Python* we need to install python. Operating Systems are pre configured with a python version as shown in the image. Their is no version of Python is installed in Windows OS.
+
+#+ATTR_ORG: :width 700
+[[file:images/01.png]]
+
+You can check the version of python on your system by running the following command in Terminal.
+#+begin_src bash :results output
+python --version
+#+end_src
+
+- System Python is for your Operating System
+- Please don't use it
+- And don't update it
+- It can crash the whole OS
+
+** Install Python
+No matter what Operating System you have, you need to install Python. There are many different ways to do this,
+1. Install from Official site: [[https://www.python.org/]]
+2. Install using package managers: /(like homebrew)/ [[https://docs.brew.sh/Homebrew-and-Python]]
+3. You can build it yourself by cloning the repo: [[https://github.com/python/cpython]]
+4. Install using *Pyenv*: [[https://github.com/pyenv/pyenv]]
+
+*** Pyenv
+However I think that the best way to install the python is by using *pyenv*. pyenv is a tool to manage various python versions. pyenv will work with MacOS and Linux, on windows pyenv-win is the tool name. pyenv is pretty useful if you are working with different python versions. All the installation instructions are provided on the Github repo.
+
+/There is one more thing to do, and that is to install python build dependencies, before installing any python version./
+
+**** Check available versions of python using pyenv
+Alright now as we have pyenv installed let's take a look at what it can do. Starting with installing some brand new python versions. To see a list of which python versions are available, just run the given command in the terminal. It will list all the python versions available for installation. At the top of the list standard CPython versions are present, these are the version we will be using.
+
+#+begin_src bash :results output
+pyenv install --list
+#+end_src
+
+**** Install Python
+- Given command will install the specific python version. You can check the version needed by using the previous command. The command will take lil bit time to install the specified python version.
+
+  #+begin_src bash :results output
+  pyenv install 3.9.0
+  #+end_src
+
+- After the installation you can check the available versions of python by typing the following command in terminal. It will generate the output of the installed version, and the * means that the current version we are using.
+
+  #+begin_src bash :results output
+  pyenv versions
+  #+end_src
+
+  #+RESULTS:
+  : * system (set by /Users/tusharmahore/.pyenv/version)
+  :   3.9.0
+
+- To set the global version, or what we can say to change the version of python, following command is used. After you can check the version of python of your system.
+
+  #+begin_src bash :results output
+  pyenv global 3.9.0
+  #+end_src
+
+  To revert it back to the system version you can use ~pyenv global system~.
+
+- Before that you should run ~pyenv rehash~ command, to make sure that every command works fine. This command updates pyenv, so after running this it will know that we have installed new version of python.
+
+**** Different Levels in which Pyenv works
